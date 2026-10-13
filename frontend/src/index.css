@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2f6b4f;
+  --color-primary-light: #4f8d69;
+  --color-primary-dark: #173f2c;
+  --color-secondary: #e5efe6;
+  --color-accent: #e5a34b;
+  --color-danger: #c2413a;
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-stone-50 text-gray-900 antialiased;
+  font-family: var(--font-sans);
+  min-width: 320px;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgb(79 141 105 / 45%);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3
+    font-semibold text-white shadow-sm transition duration-200
+    hover:-translate-y-0.5 hover:bg-primary-light hover:shadow-md
+    disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20
+    bg-white px-6 py-3 font-semibold text-primary transition duration-200
+    hover:border-primary hover:bg-primary hover:text-white;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900
+    placeholder:text-gray-400 transition
+    focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/10;
+}
+
+.card {
+  @apply rounded-2xl border border-gray-100 bg-white shadow-sm
+    transition duration-200 hover:shadow-md;
+}
+
+::selection {
+  background: #dcebdd;
+  color: #173f2c;
+}
